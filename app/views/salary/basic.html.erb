@@ -1,0 +1,71 @@
+<style>
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.office{
+	text-align: center;
+}
+
+</style>
+
+
+<div class="office" style="">
+<h2>JUHOMI</h2>
+<p> 5(Old No 3) Lake View Road<br>
+	West Mambalam<br>
+	Chennai - 600033<br></p>
+</div>
+
+The Current time is <%= @time %> <br>
+
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Designation</th>
+    <th>City</th>
+  </tr>
+  <tr>
+    <td>Magesh</td>
+    <td>QA</td>
+    <td>Trippur</td>
+  </tr>
+  <tr>
+    <td>Raj</td>
+    <td>SSE</td>
+    <td>Trippur</td>
+  </tr>
+  <tr>
+    <td>Anitha</td>
+    <td>SE</td>
+    <td>Coimbatore</td>
+  </tr>
+  <tr>
+    <td>Mathan</td>
+    <td>QA</td>
+    <td>Namakkal</td>
+  </tr>
+</table>
+</body>
+
+<br>
+
+<h2> HTML </h2>
+Click here to know <a href="/salary/internet_allowance">internet_allowance</a> details. <br>
+
+
+<h2> ERB </h2>
+Click here to know <%= link_to 'Internal_allowance',salary_internet_allowance_path %> details. <br>
+
+
+
+
+
+
+
