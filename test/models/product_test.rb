@@ -28,10 +28,8 @@ class ProductTest < ActiveSupport::TestCase
 
   test "product title must be unique" do
     product = Product.new(title: 'Nokia1', description: 'sample1', image_url: '7apps.jpg', price: 10)
-    assert product.valid?
+    assert product.invalid?
 #    product.save
-    puts "====title error=========="
-    puts product.errors[:title]
     assert product.errors[:title].any?
     # product.price = -1
     # assert product.invalid?

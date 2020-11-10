@@ -11,3 +11,10 @@ two:
   description: MyText
   image_url: 7apps.jpg
   price: 9.99
+
+
+three:
+  title: Nokia1100
+  description: test_description 
+  image_url: 7apps.jpg
+  price: 9.99

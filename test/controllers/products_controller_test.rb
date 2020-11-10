@@ -9,6 +9,15 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get products_url
     assert_response :success
+    assert_select 'nav.side_nav a', minimum: 4
+    assert_select 'main h1', 'Products'
+    assert_select 'main table tfoot tr td a', 1
+    assert_select 'main tbody tr', 3
+    assert_select 'main tbody tr td', 9
+    assert_select 'main tbody tr td.image', 3
+    assert_select 'main tbody tr td.description h1', 'Nokia1100'
+    assert_select 'main tbody tr td.description p', 'test_description'
+    assert_select 'main tbody tr td.actions ul li', 9
   end
 
   test "should get new" do
@@ -37,6 +46,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should update product" do
     patch product_url(@product), params: { product: { description: @product.description, image_url: @product.image_url, price: @product.price, title: @title } }
     assert_redirected_to product_url(@product)
+  end
+
+  test "can't delete product in cart" do assert_difference('Product.count', 0) do
+    delete product_url(products(:two)) end
+    assert_redirected_to products_url
   end
 
   test "should destroy product" do
